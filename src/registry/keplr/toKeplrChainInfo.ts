@@ -54,7 +54,7 @@ export function toKeplrChainInfo(
     coinMinimalDenom: asset.base,
     coinDecimals: asset.denom_units.filter(
       (denomUnit: { denom: string }) => denomUnit.denom === asset.display
-    )[0]?.exponent,
+    )[0]?.exponent ?? 6,
     coinGeckoId: asset.coingecko_id,
     coinImageUrl: asset.logo_URIs?.svg ?? asset.logo_URIs?.png,
   }));
